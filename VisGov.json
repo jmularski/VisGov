@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "visgov-224106",
+  "private_key_id": "49d63ff8686cf8b449aa2f68574089e09a8e65f7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwQGCh0OB/RLHG\nhEKtQsx/8A46XcWRwc2TDFRKcOq3Wu+cvXoJfI+TlB2cb96EsFfWsFD7KF4ctsHC\n6CYFvR1gvF/dRYDWSuyjSwmCNp4Qsa9gR2z3Qg+oN7sZvS2BEWCYKRejKs/sC3H3\nSym24eXYfNIXD0HYv+C+e6nKxOm3tOKvWDP7tx8W8CJ98HDqJ4kNelfW4ir9puFn\nTTencKd46BuB+EE4EneUdrQz7ejIivMXGLvMXeRjZjEjyKdjKjpiHU8oEhHJKr7J\ns/0AkMCkxkg88xML8Oc7bpVBEpGfJ18QwbB7j+Vix6pFV2L+4ouFn54RiAy0eabp\nFg93p8pxAgMBAAECggEAEPlnlQ37IPv/rGET1Cs+a1qLiZQlsT+bSdHX0wIu82ZU\nSfchkq+msDgv5d9hlyEt7yTfQmEFN09j4nPd0uhUtPqkt424YRWpgUx6Z5+qTMH1\nZENcu4S8N0ouwHAsurputW4iXaTY43XIDbX1GCzcqE3VJJgOkmO1rwKqkTcHqe5z\n1UH1VbI0mqKfihaJLtlIhvRSLKNEl4wx1C5DjSCzuUv4oKnrd2oh61LD/RHUTRXm\npGDMmvQDsp1m1k1qGG7Tw/vsrMwNahIv//JL6zECesxrlNxS33YbNyvmvCAIKePh\ndxzU6W43Um3Os3KB5EmfohzU3GFfvxX/6aR/DU7UFQKBgQDeYPGLkKqhyGmts8Uy\nSdEwT0O7MjHyt0gUZA4GZMNtJUxCeA4SlWBM0mmyaMY0UX8l+3y7B/Y7J7dM0aji\nRwvFB1E9dmzypxRfOCXCO7soOKB/b5wdhvvPSKuC6P9dhn9Gtj8CH2IUj0SvKTRe\ntgUToM+0CCPYx7wTa9uXlTu5BwKBgQDK5hpokGHo56SO2rbaoXso4uYpvTIRyoXY\nO4bODH30Y1TRL1fBh5PlV3jwAg2tc54LO/HXfMPCb5GTan2HMdlBXVn5hJ8D+ujE\nh7ACAYPFxq5f2VXxPgTl32kE53ahhC3K+q7BTex74Z8HjSskWUVb1kzJEQVJqOF4\nu/U0XD3axwKBgDjhPQdAwpRNCdLXR5o8TVh4/c8U4Le/b51flkLGZUI2pxHdWWQh\ndxdPPp/WstPRAJ+7esTwHWg2GWl5uyPdnkIQRBRfhTBv0gMk/mt3EcEQ8uSFrL3U\nt/XmFZCPfjny2/0/QlCNrG2r05qmBHIxRo0ltdrLtjeNpyqkjO9xyWvjAoGAA740\n9ILdW4eScJQ2VVgvRnTRHCoCV3Ot/mwys3BljnGaqfU+oDJZFx0C/SJ8kBuW6cwk\nTP5fOiIGxHptcGYKBPus4j6BFHi3fJCoPZE7lhVxOBFxVW74dikl7dI7TQV8Nsdj\nG+vNFgf2gBQpnJUNA4Gzju4Cc/ZqmmiVQG8HMRcCgYEAut6czFIvgjKi6HQyAbl6\nKjFoNG7cIOa34Fewv2ehsXYtNXvzv7/tC9B/F0NmpVOHSjVm0FrIm9I3y3/B6IWz\n0Huma7b3Fu/1+Fezn7liJ5tleIVqs324AQMSzpPA2jSeQhjUu937+ILy6vyH5jbc\nyT+iAm6muGu4GErSRQ3oQ2o=\n-----END PRIVATE KEY-----\n",
+  "client_email": "visgov@visgov-224106.iam.gserviceaccount.com",
+  "client_id": "111278464100646537137",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/visgov%40visgov-224106.iam.gserviceaccount.com"
+}

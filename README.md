@@ -1,2 +1,2 @@
 # VisGov
-Hello world I guess
+Open source parser of German Bundestag protocols, connected with MongoDB and Dialogflow.
