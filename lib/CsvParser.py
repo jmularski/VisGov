@@ -2,6 +2,7 @@
 
 from xml.etree import ElementTree
 
+
 def FileReader(directory, fileName):
     fileName = directory + fileName
     xmlp = ElementTree.XMLParser(encoding='utf-8')
