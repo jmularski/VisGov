@@ -14,7 +14,7 @@ class Analyser:
     def __init__(self, file, date):
         client = MongoClient()
         db = client.bundestag_analysis
-        posts = db.posts
+        posts = db.data
         self.data_analysis(file, date, posts)
 
     def return_speaker_data(self, name):
@@ -48,14 +48,12 @@ class Analyser:
         for children in speech.getchildren():
             if children is None:
                 continue
-            # print(children)
             if children.tag == 'name' or (
                     children.tag == 'p' and children.attrib['klasse'] == 'redner'):
                 print(current_speaker.setdefault('name', ''),
                       self.return_speaker_data(children))
                 current_speaker.update(self.return_speaker_data(children))
-                if current_speaker != {} and current_speaker != {'date': date,
-                                                                 'topic': topic.replace('\xa0', " ")} and len(current_speaker) > 5:
+                if current_speaker != {} and current_speaker != basic_current_speaker and len(current_speaker) > 5:
                     db.insert_one(current_speaker)
                     del current_speaker['_id']
                     current_speaker = basic_current_speaker
@@ -64,14 +62,11 @@ class Analyser:
                     'text', '') + children.text.replace('\xa0', " ")
             elif children.tag == 'kommentar':
                 data = CommentAnalyser.parse_comment(children.text)
-                if data is None:
-                    continue
-                else:
+                if data is not None:
                     current_speaker['comments'] = data
                     db.insert_one(current_speaker)
                     del current_speaker['_id']
-                    del current_speaker['text']
-                    del current_speaker['comments']
+                    current_speaker = basic_current_speaker
 
     def data_analysis(self, file, date, db):
         global_date = date

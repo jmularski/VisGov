@@ -71,9 +71,12 @@ class CommentAnalyser:
         else:
             comment_type = "Lachen"
 
-        return {"party_involved": parties, "person": people,
-                "original_text": comment_text, "conotation": conotation, "type": comment_type}
-
+        if people is not None:
+            return {"party_involved": parties, "person": people,
+                    "original_text": comment_text, "conotation": conotation, "type": comment_type}
+        else: 
+            return {"party_involved": parties,
+                    "original_text": comment_text, "conotation": conotation, "type": comment_type}
     def parse_zuruf(self, comment_text):
         # Actually parsing Zuruf is hard, so pushing it back until after alpha
         # release
@@ -110,8 +113,7 @@ class CommentAnalyser:
 
     def parse_comment(self, comment):
         # getting rid of useless braces
-        comment = comment.replace("(", "")
-        comment = comment.replace(")", "")
+        comment = re.sub("\(|\)", "", comment)
         if "–" in comment:
             # splitting on – by its unicode char which is super weird
             # workaround

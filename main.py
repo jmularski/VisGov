@@ -7,23 +7,20 @@ client = MongoClient()
 db = client.bundestag_analysis
 posts = db.posts
 
-# Include regex
-
-
 def getAttendanceAtDate(date, party=None):
     unique_speakers = []
     query = {"date": date}
     if party is not None:
         query['fraction_or_title'] = party
     speakers = posts.find(query, {"_id": 0, "name": 1})
-    print(speakers)
     for speaker in speakers:
         if speaker['name'] not in unique_speakers:
             unique_speakers.append(speaker['name'])
-    return unique_speakers
+    result = { 'fulfillmentText': "That many: " + str(len(unique_speakers)) }
+    return jsonify(result)
 
 
-def getSpeakingTime(date="", person):
+def getSpeakingTime(person, date=""):
     time = 0.0
     query = {"name": person}
     if date is not None:
@@ -36,7 +33,6 @@ def getSpeakingTime(date="", person):
 
 def getMostDiscussedTopics(party):
     texts = posts.find({"party": party}, {"_id": 0, "text": 1})
-    for text in texts
 
 # @app.route('/', methods = ['POST'])
 
@@ -46,7 +42,7 @@ def dialogflow():
     intent = body[u'intent'][u'displayName']
     parameters = body[u'parameters']
     if intent == 'date/party':
-        result = getAttendanceAtDate(parameters[u'date'], parameters[u'party'])
+        return getAttendanceAtDate(parameters[u'date'], parameters[u'party'])
         result = {
             'fulfillmentText': "That many: " + str(result)
         }
