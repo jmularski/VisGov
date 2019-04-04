@@ -11,9 +11,7 @@ class CommentAnalyser:
         pass
 
     def get_person_data(self, person):
-        if person[0] == " ":
-            person = person[1:]
-
+        person = person.strip()
         person = person.replace('Abg. ', '')
 
         # check if is member of party

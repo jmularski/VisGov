@@ -1,12 +1,23 @@
 from flask import Flask, jsonify, request
 from pymongo import MongoClient
 import re
-from json import dumps
+from json import dumps, loads
 #app = Flask(__name__)
 
 client = MongoClient()
 db = client.bundestag_analysis
 data = db.data
+
+possibleDates = 
+
+def routeIntents(intent, parameters){
+    if intent == 'date/party': return getAttendanceAtDate(parameters[u'date'], parameters[u'party'])
+    elif intent == 'date/total': return getAttendanceAtDate(parameters[u'date'])
+    elif intent == 'data/speaking_time': return getSpeakingTime(parameters[u'date'], parameters[u'person'])
+    elif intent == 'date/speaking_time_total': return getSpeakingTime(parameters[u'person'])
+    elif intent == 'party/topics': return getMostDiscussedTopics(parameters[u'party'])
+}
+
 
 def getAttendanceAtDate(date, party=None):
     unique_speakers = []
@@ -40,14 +51,11 @@ def getMostDiscussedTopics(party):
 
 @app.route('/', methods = ['POST'])
 def dialogflow():
-    body = request[u'json']
+    body = json.loads(request.get_json())[u'queryResult']
     intent = body[u'intent'][u'displayName']
     parameters = body[u'parameters']
-    if intent == 'date/party': return jsonify(getAttendanceAtDate(parameters[u'date'], parameters[u'party']))
-    elif intent == 'date/total': return jsonify(getAttendanceAtDate(parameters[u'date']))
-    elif intent == 'data/speaking_time': return jsonify(getSpeakingTime(parameters[u'date'], parameters[u'person']))
-    elif intent == 'date/speaking_time_total': return jsonify(getSpeakingTime(parameters[u'person']))
-    elif intent == 'party/topics': return jsonify(getMostDiscussedTopics(parameters[u'party']))
+    return jsonify(routeIntents)
+
 
 if __name__ == "__main__":
     app.run()
