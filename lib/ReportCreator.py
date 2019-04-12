@@ -1,8 +1,7 @@
-import sys
+import sys, os
 from CsvParser import FileReader
 from Analyser import Analyser
 
-fileName = sys.argv[1]
-
-xmlFile = FileReader('../files/', fileName + '.xml')
-print(Analyser(xmlFile, fileName))
+for fileName in os.listdir("../files"):
+  xmlFile = FileReader('../files/', fileName)
+  Analyser(xmlFile, fileName)

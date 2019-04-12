@@ -95,6 +95,8 @@ class CommentAnalyser:
         return {"person": person, "original_text": text, "type": "Zwischenruf"}
 
     def parse_single_comment(self, comment_text):
+        if len(comment_text) == 0:
+            return None
         if comment_text[0] == " ":
             comment_text = comment_text[1:]
         if re.match("Beifall und Heiterkeit|Heiterkeit und Beifall",
